@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # studytrack
 
 A new Flutter project.
@@ -15,3 +16,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# Trainee StudyTrack é um protótipo de aplicação mobile/web para acompanhamento de estudos de trainees.
+Projeto acadêmico Trainee StudyTrack desenvolvido nas sprints da disciplina
+>>>>>>> abed9d00411ab1ec54af801fc07442f53342b018
