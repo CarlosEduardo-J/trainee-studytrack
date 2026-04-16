@@ -1,3 +1,11 @@
+## 🎯 Objetivo do Projeto
+
+O objetivo do projeto **StudyTrack** é desenvolver um aplicativo mobile que permita aos estudantes organizar e gerenciar sua rotina de estudos de forma centralizada, prática e eficiente.
+
+A proposta é oferecer uma solução que integre o cadastro de matérias, criação de tarefas, controle de prazos e acompanhamento do progresso acadêmico em uma única plataforma, reduzindo a desorganização causada pelo uso de múltiplas ferramentas.
+
+Com isso, o sistema busca melhorar a produtividade dos usuários, facilitar o planejamento dos estudos e proporcionar uma visão clara da evolução acadêmica ao longo do tempo, promovendo maior disciplina, consistência e autonomia no processo de aprendizagem.
+
 ## Tecnologias Utilizadas
 
 Este projeto foi desenvolvido utilizando tecnologias modernas voltadas para a criação de aplicações multiplataforma, priorizando desempenho, produtividade e organização do código.
