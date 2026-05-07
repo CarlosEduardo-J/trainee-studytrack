@@ -40,3 +40,4 @@ As responsabilidades detalhadas estão registradas na pasta `/docs/integrantes`:
 *   **Carlos Eduardo Jaquis Alexandria**: Product Owner (PO), Gestão de Versionamento e Desenvolvedor Full Stack.
 *   **Samuel Stefano Teixeira do Carmo**: Estilização do Projeto.
 *   **João Italo Moreira Pamplona**: Desenvolvedor Frontend.
+*   **João Vitor Melo**: Ajudante Geral.
