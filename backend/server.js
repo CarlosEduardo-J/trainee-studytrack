@@ -16,6 +16,21 @@ app.get('/tarefas', (req, res) => {
   res.status(200).json(tarefasMock);
 });
 
+// Rota GET: Buscar tarefa por ID
+app.get('/tarefas/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+
+  const tarefa = tarefasMock.find(t => t.id === id);
+
+  if (!tarefa) {
+    return res.status(404).json({
+      error: "Tarefa não encontrada"
+    });
+  }
+
+  res.status(200).json(tarefa);
+});
+
 // Rota POST: Processamento de Formulário com Validação de Dados
 app.post('/tarefas', (req, res) => {
   const { titulo, descricao, data_limite } = req.body;
