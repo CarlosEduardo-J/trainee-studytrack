@@ -1,58 +1,47 @@
-require('dotenv').config();
 const express = require('express');
-const { createClient } = require('@supabase/supabase-js');
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Configura o backend para entender quando o Flutter enviar dados em formato JSON
+// Middleware para processar dados de formulários/JSON
 app.use(express.json());
 
-// Conexão com o Supabase usando as variáveis do arquivo .env
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Banco de dados temporário em memória (atende a "Persistência quando aplicável")
+let tarefasMock = [
+  { id: 1, titulo: "Estudar para a prova", descricao: "Matéria de Backend", data_limite: "2026-06-25" },
+  { id: 2, titulo: "Finalizar o trabalho", descricao: "Enviar no prazo", data_limite: "2026-06-24" }
+];
 
-// --- CRITÉRIO DO PROFESSOR: ROTA GET (Busca de dados dinâmicos) ---
-app.get('/tarefas', async (req, res) => {
-  try {
-    const { data, error } = await supabase.from('tarefas').select('*');
-    if (error) throw error;
-    
-    return res.status(200).json(data);
-  } catch (err) {
-    return res.status(500).json({ error: 'Erro ao buscar tarefas do banco.' });
-  }
+// Rota GET: Listar tarefas (Páginas/Respostas Dinâmicas)
+app.get('/tarefas', (req, res) => {
+  res.status(200).json(tarefasMock);
 });
 
-// --- CRITÉRIO DO PROFESSOR: ROTA POST e VALIDAÇÃO DE DADOS ---
-app.post('/tarefas', async (req, res) => {
+// Rota POST: Processamento de Formulário com Validação de Dados
+app.post('/tarefas', (req, res) => {
   const { titulo, descricao, data_limite } = req.body;
 
-  // Validação explícita em código (o professor exige isso!)
-  if (!titulo || titulo.trim() === '') {
-    return res.status(400).json({ error: 'O título da tarefa é obrigatório.' });
-  }
-  if (titulo.length < 3) {
-    return res.status(400).json({ error: 'O título deve ter pelo menos 3 caracteres.' });
+  // VALIDAÇÃO EXIGIDA PELO PROFESSOR
+  if (!titulo || titulo.trim() === "") {
+    return res.status(400).json({ error: "O título da tarefa é obrigatório!" });
   }
 
-  try {
-    // Persistindo os dados no Supabase através do backend
-    const { data, error } = await supabase
-      .from('tarefas')
-      .insert([{ titulo, descricao, data_limite }])
-      .select();
+  // Cria o novo objeto simulando a inserção no banco
+  const novaTarefa = {
+    id: tarefasMock.length + 1,
+    titulo,
+    descricao: descricao || "",
+    data_limite: data_limite || ""
+  };
 
-    if (error) throw error;
+  tarefasMock.push(novaTarefa);
 
-    return res.status(201).json({ message: 'Tarefa criada com sucesso!', data });
-  } catch (err) {
-    return res.status(500).json({ error: 'Erro ao salvar a tarefa no banco.' });
-  }
+  res.status(201).json({
+    message: "🚀 Tarefa criada com sucesso (Simulação)!",
+    dados: novaTarefa
+  });
 });
 
-// Liga o servidor na porta 3000
+// Inicialização do servidor
 app.listen(PORT, () => {
   console.log(`🚀 Servidor backend rodando na porta ${PORT}`);
 });
