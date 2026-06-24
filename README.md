@@ -29,8 +29,26 @@ Para garantir a estabilidade do código e a colaboração, adotamos a seguinte e
 ## 🚀 Tecnologias Utilizadas
 *   **Flutter**: Framework multiplataforma utilizado para a interface.
 *   **Dart**: Linguagem de programação do projeto.
+*   **Node.js + Express**: API REST do backend de tarefas.
 *   **Visual Studio Code**: Editor de código utilizado no desenvolvimento.
 *   **CSS**: Utilizado para a estilização do entorno Web (index.html).
+
+---
+
+## ▶️ Como Executar
+**App Flutter:**
+```bash
+flutter pub get
+flutter run
+```
+
+**Backend (em desenvolvimento na branch `develop`):**
+```bash
+cd backend
+npm install
+npm start
+# Servidor disponível em http://localhost:3000
+```
 
 ---
 
