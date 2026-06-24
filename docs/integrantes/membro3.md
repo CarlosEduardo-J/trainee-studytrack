@@ -1,2 +1,2 @@
-Samuel Setefano Teixeira do Carmo
+Samuel Stefano Teixeira do Carmo
 Função: estilização do projeto
