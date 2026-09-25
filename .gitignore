@@ -47,3 +47,6 @@ app.*.map.json
 # Backend
 backend/node_modules/
 backend/.env
+# StudyTrack backend
+backend/data/
+backend/.env
