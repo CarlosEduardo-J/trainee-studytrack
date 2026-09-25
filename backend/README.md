@@ -7,7 +7,7 @@ aplicativo web responsivo (PWA) da pasta `public/`. Um único processo entrega a
 
 ## ▶️ Como Executar
 
-Requer **Node.js 22.5+**.
+Requer **Node.js 22.13+** (antes disso o `node:sqlite` exige flag).
 
 ```bash
 cd backend

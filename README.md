@@ -70,6 +70,7 @@ npm start       # http://localhost:3000
 ```
 
 Detalhes de rotas, variáveis e segurança em [`backend/README.md`](backend/README.md).
+Recursos entregues, evidências e limitações da v1.0.0 em [`docs/ENTREGA-BIM03.md`](docs/ENTREGA-BIM03.md).
 
 O projeto Flutter da raiz (`lib/`) continua como base para a versão mobile nativa, planejada para um
 próximo ciclo; ele consumirá a mesma API.
@@ -123,7 +124,7 @@ As responsabilidades detalhadas estão registradas na pasta:
 
 ## 📌 Status do Projeto
 
-🚧 Projeto em desenvolvimento acadêmico.
+Versão **v1.0.0** entregue no 3º bimestre (25/09/2026). Projeto acadêmico.
 
 ---
 
