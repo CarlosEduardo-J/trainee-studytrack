@@ -1,38 +1,64 @@
 # Planejamento da Minha Atuação no Projeto (Design/UI)
 
-## Responsabilidade
+## Responsabilidade no Sprint 1
 
-Estou responsável pela parte de **design e interface** do projeto StudyTrack, com foco em construir telas com aparência profissional, boa organização visual e consistência entre componentes.
+Atuo como responsável por **Design e Interface**, com foco em:
 
-## Estratégia de Construção das Telas
+- padronização visual das telas;
+- componentização da camada de interface;
+- melhoria de usabilidade e legibilidade;
+- documentação das decisões de design para o time.
 
-Minha intenção é utilizar ferramentas de apoio como **Claude Design** ou **Lovable** para acelerar a construção de referências visuais e protótipos de telas, mantendo o objetivo de entregar uma interface moderna e com padrão profissional.
+## Objetivo de Entrega (B2T02)
 
-## Possível Adoção de Tailwind CSS
+Comprovar execução real do processo de trabalho por meio de:
 
-Estou avaliando o uso de **Tailwind CSS** para padronizar e agilizar a estilização da interface.  
-Antes de aplicar essa abordagem, vou confirmar com o professor se o uso da biblioteca é permitido no trabalho.
+- branch de trabalho dedicada;
+- commits com evolução da interface;
+- registro das decisões de UI na documentação da sprint.
 
-Se for aprovado:
+## Escopo Técnico
 
-- vou instalar o Tailwind CSS;
-- vou configurar as dependências necessárias;
-- vou estruturar a UI com componentização, visando organização e manutenção;
-- vou seguir um padrão limpo e escalável, semelhante ao que aplico no meu trabalho.
+### 1) Estrutura visual e componentização
 
-## Possível Uso de Vite
+- organizar telas com layout consistente;
+- reutilizar componentes para reduzir retrabalho;
+- manter padrão de espaçamento, tipografia e hierarquia visual.
 
-Também pretendo avaliar a utilização de **Vite** para melhorar a experiência de desenvolvimento e organização da camada de interface.  
-Da mesma forma, essa decisão será validada com o professor antes de qualquer implementação.
+### 2) Estilização
 
-Se for aprovado, a proposta é configurar o ambiente com Vite e organizar a estrutura do front-end para facilitar desenvolvimento, componentização e evolução do projeto.
+- avaliar adoção de **Tailwind CSS** para acelerar estilização;
+- se aprovado, configurar e aplicar padrão utilitário com organização por componentes.
+
+### 3) Ambiente Front-End
+
+- avaliar uso de **Vite** para produtividade no desenvolvimento;
+- se aprovado, documentar configuração e fluxo de execução.
+
+## Critérios de Aceite da Minha Entrega
+
+- interface com padrão visual consistente entre telas principais;
+- código de estilização organizado e de fácil manutenção;
+- evidências no GitHub (branch, commits, PR e comentários de revisão).
+
+## Evidências Esperadas no GitHub
+
+- Branch: `Samuel/estilização`
+- Revisores: João Italo e João Vitor Melo
+- Commits vinculados ao trabalho de interface/estilização
+
+## Riscos e Mitigação
+
+- **Risco:** uso de tecnologia não autorizada na disciplina.  
+  **Mitigação:** validar previamente com o professor antes de aplicar Tailwind/Vite.
+- **Risco:** inconsistência visual entre telas feitas por pessoas diferentes.  
+  **Mitigação:** manter padrão documentado de UI e revisar em PR.
 
 ## Próximos Passos
 
-- alinhar com o professor se Tailwind CSS pode ser utilizado;
-- alinhar com o professor se Vite pode ser utilizado;
-- após validação, configurar o ambiente escolhido;
-- iniciar construção e componentização das telas com foco em qualidade visual e organização.
+- confirmar com o professor a adoção de Tailwind CSS e Vite;
+- finalizar ajustes visuais da Sprint 1;
+- registrar feedback dos revisores e aplicar correções.
 
 ---
 
