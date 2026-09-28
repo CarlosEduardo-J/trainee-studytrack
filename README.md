@@ -1,5 +1,16 @@
 # 📚 StudyTrack - Sistema de Gestão Acadêmica
 
+## 🔗 Acesse o sistema
+
+**https://samuelstefano.github.io/studytrack/** (abre direto no navegador, também no celular)
+
+| Conta | E-mail | Senha |
+|---|---|---|
+| Aluno | `samuel@studytrack.app` | `studytrack123` |
+| Admin / representante | `carlos@studytrack.app` | `studytrack123` |
+
+O código do sistema final (API + app web) está em [`backend/`](backend/).
+
 ## 🎯 Objetivo do Projeto
 
 O objetivo do projeto **StudyTrack** é desenvolver um aplicativo mobile que permita aos estudantes organizar e gerenciar sua rotina de estudos de forma centralizada, prática e eficiente.
