@@ -1,5 +1,16 @@
 # 📚 StudyTrack - Sistema de Gestão Acadêmica
 
+## 🔗 Acesse o sistema
+
+**https://samuelstefano.github.io/studytrack/** (abre direto no navegador, também no celular)
+
+| Conta | E-mail | Senha |
+|---|---|---|
+| Aluno | `samuel@studytrack.app` | `studytrack123` |
+| Admin / representante | `carlos@studytrack.app` | `studytrack123` |
+
+O código do sistema final (API + app web) está em [`backend/`](backend/).
+
 ## 🎯 Objetivo do Projeto
 
 O objetivo do projeto **StudyTrack** é desenvolver um aplicativo mobile que permita aos estudantes organizar e gerenciar sua rotina de estudos de forma centralizada, prática e eficiente.
@@ -56,50 +67,24 @@ Todo código só entra na branch `develop` por meio de um **Pull Request**, que 
 
 ---
 
-## 💻 Ambiente de Desenvolvimento
+## 💻 Como Executar (versão do 3º bimestre)
 
-Siga os passos abaixo para configurar e executar o projeto localmente utilizando o **Visual Studio Code**.
-
-### 📌 Pré-requisitos
-
-- Git instalado
-- Flutter SDK (versão estável)
-- VS Code instalado
-- Emulador Android ou dispositivo físico configurado
-
----
-
-## 🚀 Passo a Passo para Execução
-
-### 1️⃣ Clonar o repositório
+A versão funcional é o **app web responsivo (PWA)** servido pela API em `backend/`.
 
 ```bash
 git clone https://github.com/CarlosEduardo-J/trainee-studytrack.git
+cd trainee-studytrack/backend
+npm install
+cp .env.example .env
+npm run seed    # dados de demonstração (opcional)
+npm start       # http://localhost:3000
 ```
 
-### 2️⃣ Acessar a pasta do projeto
+Detalhes de rotas, variáveis e segurança em [`backend/README.md`](backend/README.md).
+Recursos entregues, evidências e limitações da v1.0.0 em [`docs/ENTREGA-BIM03.md`](docs/ENTREGA-BIM03.md).
 
-```bash
-cd trainee-studytrack
-```
-
-### 3️⃣ Acessar a branch de desenvolvimento
-
-```bash
-git checkout develop
-```
-
-### 4️⃣ Instalar as dependências
-
-```bash
-flutter pub get
-```
-
-### 5️⃣ Executar a aplicação
-
-```bash
-flutter run
-```
+O projeto Flutter da raiz (`lib/`) continua como base para a versão mobile nativa, planejada para um
+próximo ciclo; ele consumirá a mesma API.
 
 ---
 
@@ -113,8 +98,11 @@ flutter run
 - **Dart**  
   Linguagem principal utilizada no desenvolvimento do sistema.
 
-- **CSS**  
-  Utilizado para estilização da versão Web (`index.html`).
+- **Node.js + Express 5 + SQLite**  
+  API REST com autenticação JWT e banco de dados.
+
+- **HTML, CSS e JavaScript (PWA)**  
+  App web responsivo instalável no celular.
 
 ### 🛠️ Ferramentas
 
@@ -147,7 +135,7 @@ As responsabilidades detalhadas estão registradas na pasta:
 
 ## 📌 Status do Projeto
 
-🚧 Projeto em desenvolvimento acadêmico.
+Versão **v1.0.0** entregue no 3º bimestre (25/09/2026). Projeto acadêmico.
 
 ---
 

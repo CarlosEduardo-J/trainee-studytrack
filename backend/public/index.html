@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2563eb">
+<title>StudyTrack</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="auth" class="auth hidden">
+  <form id="auth-form" class="auth-card" novalidate>
+    <div class="brand">
+      <div class="brand-mark">S</div>
+      <div>
+        <h1>StudyTrack</h1>
+        <p>Organize seu semestre em um só lugar.</p>
+      </div>
+    </div>
+    <div id="signup-fields" class="hidden">
+      <label for="a-nome">Nome</label>
+      <input id="a-nome" autocomplete="name" maxlength="80">
+      <label for="a-curso">Curso</label>
+      <input id="a-curso" placeholder="Ex.: Análise e Desenvolvimento de Sistemas" maxlength="80">
+    </div>
+    <label for="a-email">E-mail</label>
+    <input id="a-email" type="email" autocomplete="email" required>
+    <label for="a-senha">Senha</label>
+    <input id="a-senha" type="password" autocomplete="current-password" required minlength="6">
+    <p id="auth-erro" class="erro hidden" role="alert"></p>
+    <button id="auth-submit" class="btn-primary" type="submit">Entrar</button>
+    <p class="auth-foot"><span id="auth-switch-label">Não tem conta?</span> <a href="#" id="auth-switch">Cadastre-se</a></p>
+  </form>
+</div>
+
+<div id="app" class="hidden">
+  <aside class="sidebar">
+    <div class="brand small">
+      <div class="brand-mark">S</div>
+      <h1>StudyTrack</h1>
+    </div>
+    <nav id="nav">
+      <a class="nav-item" data-view="inicio"><span class="ico">⌂</span><span>Início</span></a>
+      <a class="nav-item" data-view="tarefas"><span class="ico">✓</span><span>Tarefas</span></a>
+      <a class="nav-item" data-view="disciplinas"><span class="ico">▦</span><span>Disciplinas</span></a>
+      <a class="nav-item" data-view="metas"><span class="ico">◎</span><span>Metas</span></a>
+      <a class="nav-item" data-view="turmas"><span class="ico">⚑</span><span>Turmas</span></a>
+    </nav>
+    <div class="user">
+      <div class="avatar" id="u-avatar"></div>
+      <div class="user-info">
+        <strong id="u-nome"></strong>
+        <span id="u-curso"></span>
+      </div>
+      <button class="link-btn" id="logout" title="Sair">Sair</button>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div>
+        <h2 id="page-title"></h2>
+        <p id="page-sub"></p>
+      </div>
+      <button class="btn-primary" id="primary-action"></button>
+    </header>
+
+    <section id="view-inicio" class="view">
+      <div class="stats">
+        <div class="stat"><span class="stat-label">Tarefas abertas</span><strong id="st-abertas">0</strong><span class="stat-hint">a fazer</span></div>
+        <div class="stat"><span class="stat-label">Concluídas</span><strong id="st-concluidas">0</strong><span class="stat-hint">no semestre</span></div>
+        <div class="stat warn"><span class="stat-label">Vencem em 3 dias</span><strong id="st-vencendo">0</strong><span class="stat-hint">atenção</span></div>
+        <div class="stat danger"><span class="stat-label">Atrasadas</span><strong id="st-atrasadas">0</strong><span class="stat-hint">prazo passou</span></div>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel-head"><h3>Próximos prazos</h3><a href="#" data-go="tarefas">ver todas</a></div>
+          <ul id="proximos" class="task-list"></ul>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>Progresso por disciplina</h3></div>
+          <div id="barras"></div>
+        </div>
+      </div>
+      <div class="grid-2 mt">
+        <div class="panel">
+          <div class="panel-head"><h3>Conclusão geral</h3></div>
+          <div class="ring-wrap">
+            <div class="ring" id="ring"><span id="ring-label">0%</span></div>
+            <p>Você concluiu <strong id="ring-done">0</strong> de <strong id="ring-total">0</strong> tarefas cadastradas.</p>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>Concluídas por semana</h3></div>
+          <div class="chart" id="chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-tarefas" class="view hidden">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Minhas tarefas</h3>
+          <div class="filters" id="filtros">
+            <button class="chip active" data-filtro="todas">Todas</button>
+            <button class="chip" data-filtro="abertas">Abertas</button>
+            <button class="chip" data-filtro="concluidas">Concluídas</button>
+          </div>
+        </div>
+        <ul id="tarefas-lista" class="task-list"></ul>
+      </div>
+    </section>
+
+    <section id="view-disciplinas" class="view hidden">
+      <div id="disciplinas-grid" class="cards"></div>
+    </section>
+
+    <section id="view-metas" class="view hidden">
+      <div id="metas-grid" class="cards"></div>
+    </section>
+
+    <section id="view-turmas" class="view hidden">
+      <div class="panel intro">
+        <p>Uma <strong>turma</strong> conecta os alunos de uma sala. O <strong>representante</strong> cria a turma, compartilha o código e publica provas e trabalhos — cada colega recebe a atividade na própria lista de tarefas.</p>
+        <button class="btn-ghost" id="entrar-turma">Entrar com código</button>
+      </div>
+      <div id="turmas-lista"></div>
+    </section>
+  </main>
+</div>
+
+<div id="modal" class="modal hidden">
+  <form id="modal-form" class="modal-card" novalidate>
+    <h3 id="modal-title"></h3>
+    <div id="modal-body"></div>
+    <p id="modal-erro" class="erro hidden" role="alert"></p>
+    <div class="modal-acoes">
+      <button type="button" class="btn-ghost" id="modal-cancel">Cancelar</button>
+      <button type="submit" class="btn-primary" id="modal-submit">Salvar</button>
+    </div>
+  </form>
+</div>
+
+<div id="toast" class="toast hidden" role="status"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
